@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POLJOUNIVERZAL MM - Servis motornih testera, trimera i vodenih pumpi</title>
+  <meta name="description" content="POLJOUNIVERZAL MM Svrljig — servis motornih testera, trimera i vodenih pumpi. Brza dijagnostika, podešavanje i pouzdan servis." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2d8b45;
+            --primary-dark: #1a5f23;
+            --accent: #ffd700;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .logo-image {
+            width: 90px;
+            height: 90px;
+            background: transparent;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-image img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            text-align: left;
+        }
+
+        .logo-text h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.2rem;
+            background: linear-gradient(45deg, white, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-text p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            font-weight: 500;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 80%;
+            height: 2px;
+            background: var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            height: 600px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: rgba(255, 215, 0, 0.1);
+            animation: float 20s infinite linear;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: -50%;
+            left: -50%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            animation: float 15s infinite reverse linear;
+        }
+
+        @keyframes float {
+            from { transform: translate(0, 0) rotate(0deg); }
+            to { transform: translate(100px, 100px) rotate(360deg); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary-dark);
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.15rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(45deg, var(--accent), #ffed4e);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 0;
+            background: white;
+            position: relative;
+        }
+
+        .services::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--light-gray);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            color: var(--primary-dark);
+            margin: 1.5rem 0 1rem;
+            font-weight: 700;
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            background: rgba(45, 139, 69, 0.1);
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .service-icon img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--light) 0%, var(--light-gray) 100%);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            padding: 1.5rem;
+            background: white;
+            text-align: center;
+        }
+
+        .gallery-caption h3 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            font-weight: 800;
+            position: relative;
+        }
+
+        .about-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-image::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--light) 100%);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .contact-detail {
+            display: flex;
+            margin-bottom: 2rem;
+            gap: 1.5rem;
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+            min-width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 15px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(45, 139, 69, 0.1);
+        }
+
+        .contact-form textarea {
+            height: 180px;
+            resize: vertical;
+        }
+
+        /* Company Info Section */
+        .company-info {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+        }
+
+        .company-info-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .company-info h3 {
+            color: white;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .info-value {
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--accent), white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .about-image::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .hero {
+                height: 500px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.7rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: 450px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+    
+    /* Lightbox */
+    .lightbox{
+      position:fixed;inset:0;z-index:9999;
+      background:rgba(0,0,0,.92);
+      display:none;
+      align-items:center;justify-content:center;
+      padding:18px;
+    }
+    .lightbox.open{display:flex}
+    .lightbox-inner{
+      width:min(1100px, 96vw);
+      max-height:92vh;
+      display:grid;
+      grid-template-rows:auto 1fr;
+      gap:10px;
+    }
+    .lightbox-bar{
+      display:flex;align-items:center;justify-content:space-between;
+      color:#fff;
+      gap:10px;
+    }
+    .lightbox-title{font-weight:800;opacity:.9}
+    .lightbox-actions{display:flex;gap:10px}
+    .lb-btn{
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      padding:10px 12px;border-radius:12px;
+      cursor:pointer;
+    }
+    .lb-btn:hover{background:rgba(255,255,255,.14)}
+    .lightbox-img{
+      width:100%;height:100%;
+      display:flex;align-items:center;justify-content:center;
+      border-radius:18px;overflow:hidden;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+    }
+    .lightbox-img img{
+      max-width:100%;
+      max-height:82vh;
+      object-fit:contain;
+      display:block;
+    }
+
+    /* Sticky mobile bar */
+    .mobile-bar{
+      position:fixed;
+      left:50%;transform:translateX(-50%);
+      bottom:14px;
+      width:min(740px, 92vw);
+      z-index:1200;
+      display:none;
+    }
+    .mobile-bar .bar{
+      display:flex;gap:10px;
+      background:rgba(17,24,39,.88);
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(10px);
+      padding:10px;
+      border-radius:18px;
+      box-shadow:0 18px 60px rgba(0,0,0,.28);
+    }
+    .mobile-bar a{
+      flex:1;
+      text-decoration:none;
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      font-weight:900;
+      letter-spacing:.3px;
+      color:#fff;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .mobile-bar a.primary{
+      background:linear-gradient(45deg,var(--accent),#ffef75);
+      color:var(--primary-dark);
+      border:none;
+    }
+    .mobile-bar a:hover{transform:translateY(-1px)}
+    @media (max-width: 920px){
+      .mobile-bar{display:block}
+      body{padding-bottom:92px}
+    }
+
+    /* FAQ */
+    .faq{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    .faq-item{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+    .faq-item summary{
+      cursor:pointer;
+      font-weight:900;
+      color:var(--primary-dark);
+      list-style:none;
+    }
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item p{margin-top:10px;color:var(--muted)}
+    @media (max-width: 920px){
+      .faq{grid-template-columns:1fr}
+    }
+
+  
+    /* Gallery video consistency */
+    .gallery-item video{border-bottom:1px solid var(--border)}
+
+  </style>
+
+  <meta property="og:title" content="POLJOUNIVERZAL MM — Profesionalni servis" />
+  <meta property="og:description" content="Profesionalni servis motornih testera, trimera i vodenih pumpi u Svrljigu." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="../SERVIS-LOGO.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "POLJOUNIVERZAL MM",
+    "image": ["assets/testerasolo2.jpg","assets/testera1.jpg","assets/trimer1.jpg"],
+    "telephone": "+381637876266",
+    "email": "kosticmilos628@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Knjazevačka 1",
+      "addressLocality": "Svrljig",
+      "addressCountry": "RS"
+    },
+    "areaServed": "Svrljig i okolina",
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"16:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:00","closes":"14:00"}
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <!-- Lightbox -->
+  <div class="lightbox" aria-hidden="true">
+    <div class="lightbox-inner" role="dialog" aria-label="Galerija">
+      <div class="lightbox-bar">
+        <div class="lightbox-title">Pregled</div>
+        <div class="lightbox-actions">
+          <button class="lb-btn" data-lb-close type="button">Zatvori ✕</button>
+        </div>
+      </div>
+      <div class="lightbox-img">
+        <img src="" alt="Galerija pregled">
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky mobile bar -->
+  <div class="mobile-bar">
+    <div class="bar">
+      <a class="primary" href="tel:+381637876266"><i class="fa-solid fa-phone"></i>Pozovi</a>
+      <a href="viber://chat?number=%2B381637876266"><i class="fa-brands fa-viber"></i>Viber</a>
+      <a href="https://wa.me/381637876266" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+    </div>
+  </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo-container">
+                <div class="logo-image">
+                    <a href="../SERVIS-LOGO.png" data-lightbox="1" data-title="POLJOUNIVERZAL MM Logo"><img src="../SERVIS-LOGO.png" alt="POLJOUNIVERZAL MM Logo" loading="lazy"></a>
+                </div>
+                <div class="logo-text">
+                    <h1>POLJOUNIVERZAL <span>MM</span></h1>
+                    <p>Servis motornih testera, trimera i vodenih pumpi</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Početna</a></li>
+                    <li><a href="#services">Usluge</a></li>
+                    <li><a href="#gallery">Galerija</a></li>
+                    <li><a href="#about">O nama</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>PROFESIONALNI SERVIS KOJI VRAĆA PERFORMANSE </h1>
+            <p>Kvalitetan i pouzdan servis motornih testera, trimera i vodenih pumpi sa višegodišnjim iskustvom</p>
+            <a href="#contact" class="btn">Kontaktirajte nas</a>
+        </div>
+    </section>
+
+    <!-- Company Info Section -->
+    <section class="company-info">
+        <div class="container">
+            <div class="company-info-content">
+                <h3>Podaci o preduzetniku</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Naziv</div>
+                        <div class="info-value">MILOŠ KOSTIĆ PREDUZETNIK SERVIS POLJOPRIVREDNIH MAŠINA POLJO-UNIVERZAL MM SVRLJIG</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">PIB</div>
+                        <div class="info-value">114629822</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Matični broj</div>
+                        <div class="info-value">67729412</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Datum osnivanja</div>
+                        <div class="info-value">1.10.2024.</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Delatnost</div>
+                        <div class="info-value">3312 - Popravka mašina</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Poslovna jedinica</div>
+                        <div class="info-value">1 sa izdvojenim odeljenjem na adresi Knjazevačka 1, Svrljig, Srbija</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Naše usluge</h2>
+                <p>Pružamo kompletno održavanje i popravku svih vrsta poljoprivredne opreme</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <a href="../../../Downloads/Firefly_Gemini Flash_kreiraj mi motornu testeru vise vrsta zasebno u jpg 801203.png" data-lightbox="1" data-title="Motorna tester"><img src="../../../Downloads/Firefly_Gemini Flash_kreiraj mi motornu testeru vise vrsta zasebno u jpg 801203.png" alt="Motorna tester" width="1080" height="1210" loading="lazy"></a>
+                    </div>
+                    <h3>Servis motornih testera</h3>
+                    <p>Kompletan servis svih vrsta motornih testera - od malih kućnih do profesionalnih modela. Zamena rezaca, podešavanje motora, generalno održavanje.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <a href="https://placehold.co/60x60/2d8b45/ffffff?text=✂️" data-lightbox="1" data-title="Trimer"><img src="https://placehold.co/60x60/2d8b45/ffffff?text=✂️" alt="Trimer" loading="lazy"></a>
+                    </div>
+                    <h3>Servis trimera</h3>
+                    <p>Profesionalni servis trimera svih proizvođača. Popravka motora, zamena delova, balansiranje, pranje i dezinfekcija opreme.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <a href="https://placehold.co/60x60/2d8b45/ffffff?text=💧" data-lightbox="1" data-title="Vodena pumpa"><img src="https://placehold.co/60x60/2d8b45/ffffff?text=💧" alt="Vodena pumpa" loading="lazy"></a>
+                    </div>
+                    <h3>Servis vodenih pumpi</h3>
+                    <p>Popravka i održavanje svih vrsta vodenih pumpi za poljoprivrednu upotrebu. Testiranje performansi, zamena mehaničkih delova, hidraulički testovi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galerija opreme</h2>
+                <p>Pogledajte neke od opreme koju servisiramo i radimo</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <a href="https://placehold.co/400x250/2d8b45/ffffff?text=Motorna+tester" data-lightbox="1" data-title="Motorna tester"><img src="https://placehold.co/400x250/2d8b45/ffffff?text=Motorna+tester" alt="Motorna tester" loading="lazy"></a>
+                    <div class="gallery-caption">
+                        <h3>Motorni tester</h3>
+                        <p>Profesionalni servis i održavanje</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <a href="https://placehold.co/400x250/1a5f23/ffffff?text=Trimer" data-lightbox="1" data-title="Trimer"><img src="https://placehold.co/400x250/1a5f23/ffffff?text=Trimer" alt="Trimer" loading="lazy"></a>
+                    <div class="gallery-caption">
+                        <h3>Trimer</h3>
+                        <p>Stručni servis i održavanje na terenu</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <a href="https://placehold.co/400x250/2d8b45/ffffff?text=Vodena+pumpa" data-lightbox="1" data-title="Vodena pumpa"><img src="https://placehold.co/400x250/2d8b45/ffffff?text=Vodena+pumpa" alt="Vodena pumpa" loading="lazy"></a>
+                    <div class="gallery-caption">
+                        <h3>Vodena pumpa</h3>
+                        <p>Servis i testiranje performansi</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <a href="https://placehold.co/400x250/1a5f23/ffffff?text=Serija+trimer" data-lightbox="1" data-title="Serija trimer"><img src="https://placehold.co/400x250/1a5f23/ffffff?text=Serija+trimer" alt="Serija trimer" loading="lazy"></a>
+                    <div class="gallery-caption">
+                        <h3>Serija trimer</h3>
+                        <p>Različiti modeli i proizvođači</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <a href="https://placehold.co/400x250/2d8b45/ffffff?text=Detalj+servis" data-lightbox="1" data-title="Detalj servis"><img src="https://placehold.co/400x250/2d8b45/ffffff?text=Detalj+servis" alt="Detalj servis" loading="lazy"></a>
+                    <div class="gallery-caption">
+                        <h3>Detalj servis</h3>
+                        <p>Provera i zamena ključnih delova</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <a href="https://placehold.co/400x250/1a5f23/ffffff?text=Rad+na+terenu" data-lightbox="1" data-title="Rad na terenu"><img src="https://placehold.co/400x250/1a5f23/ffffff?text=Rad+na+terenu" alt="Rad na terenu" loading="lazy"></a>
+                    <div class="gallery-caption">
+                        <h3>Rad na terenu</h3>
+                        <p>Brzi i efikasan servis na lokaciji</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>O našoj firmi</h2>
+                    <p>POLJOUNIVERZAL MM je osnovan 1. oktobra 2024. godine sa ciljem da pruži kvalitetne servisne usluge poljoprivrednicima širom regiona. Naš tim stručnjaka poseduje višegodišnje iskustvo u radu sa svim vrstama poljoprivredne mehanizacije.</p>
+                    <p>Specijalizujemo se za servis motornih testera, trimera i vodenih pumpi, ali takođe pružamo i savete o održavanju i optimalnoj upotrebi ove opreme.</p>
+                    <p>Koristimo isključivo originalne delove i moderne dijagnostičke metode kako bismo osigurali najbolji kvalitet usluga našim klijentima. Naš pristup je zasnovan na pouzdanosti, brzini i profesionalizmu.</p>
+                </div>
+                <div class="about-image">
+                    <a href="../../../Downloads/Firefly CREATE AN IMAGE OF A WORKER CUTTING TREES IN THE FOREST WITH A CHAINSAW 8287.jpg" data-lightbox="1" data-title="Stručni servis"><img src="../../../Downloads/Firefly CREATE AN IMAGE OF A WORKER CUTTING TREES IN THE FOREST WITH A CHAINSAW 8287.jpg" alt="Stručni servis" loading="lazy"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kontaktirajte nas</h2>
+                <p>Imate pitanja ili želite zakazati servis? Javite nam se!</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Podaci za kontakt</h3>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <strong>Adresa:</strong><br>
+                            Knjazevačka 1<br>
+                            Svrljig, Srbija
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <strong>Telefon:</strong><br>
+                            063 787 6266
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email:</strong><br>
+                            kosticmilos628@gmail.com
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <strong>Radno vreme:</strong><br>
+                            Ponedeljak - Petak: 08:00 - 16:00<br>
+                            Subota: 08:00 - 14:00<br>
+                            Nedelja: Zatvoreno
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Vaše ime i prezime" required>
+                        <input type="email" placeholder="Vaš email" required>
+                        <input type="tel" placeholder="Vaš telefon">
+                        <textarea placeholder="Poruka" required></textarea>
+                        <button type="submit" class="btn">Pošalji poruku</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-title">
+        <h2>Pitanja koja svi pitaju</h2>
+        <p>Da ne kucaš poruku za svaku sitnicu — evo brzih odgovora.</p>
+      </div>
+      <div class="faq">
+        <details class="faq-item">
+          <summary>Koliko traje servis?</summary>
+          <p>Za standardne kvarove najčešće 1–3 dana (zavisi od delova i gužve). Hitne stvari rešavamo prioritetno kad može.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Da li radite dijagnostiku?</summary>
+          <p>Da — prvo dijagnostika, pa tek onda dogovor oko cene i šta se menja. Nema “iznenađenja”.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Da li koristite originalne delove?</summary>
+          <p>Preferiramo originalne ili proverene OEM zamene (po dogovoru). Uvek ti kažemo šta ide u mašinu.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Da li je moguće preuzimanje/dostava?</summary>
+          <p>Ako si u Svrljigu i okolini — možemo da se dogovorimo. Najbrže: poziv ili Viber.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">POLJOUNIVERZAL MM</div>
+                <div class="footer-links">
+                    <a href="#home">Početna</a>
+                    <a href="#services">Usluge</a>
+                    <a href="#gallery">Galerija</a>
+                    <a href="#about">O nama</a>
+                    <a href="#contact">Kontakt</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 POLJOUNIVERZAL MM. Sva prava zadržana.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Form submission handling
+        const contactForm = document.querySelector('.contact-form form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Hvala na poruci! Kontaktiraćemo Vas u najkraćem mogućem roku.');
+                this.reset();
+            });
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '1rem 0';
+                header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.2)';
+            } else {
+                header.style.padding = '1.5rem 0';
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+            }
+        });
+    </script>
+<script>
+
+    // Gallery lightbox
+    const lb = document.querySelector('.lightbox');
+    const lbImg = document.querySelector('.lightbox-img img');
+    const lbTitle = document.querySelector('.lightbox-title');
+    const openLB = (src, title) => {
+      if(!lb) return;
+      lbImg.src = src;
+      lbTitle.textContent = title || 'Pregled';
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeLB = () => {
+      if(!lb) return;
+      lb.classList.remove('open');
+      lbImg.src = '';
+      document.body.style.overflow = 'auto';
+    };
+    document.querySelectorAll('[data-lightbox]').forEach(el=>{
+      el.addEventListener('click', (e)=>{
+        e.preventDefault();
+        openLB(el.getAttribute('href'), el.getAttribute('data-title'));
+      });
+    });
+    document.querySelectorAll('[data-lb-close]').forEach(btn=>{
+      btn.addEventListener('click', closeLB);
+    });
+    lb?.addEventListener('click', (e)=>{ if(e.target === lb) closeLB(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeLB(); });
+
+</script>
+</body>
+</html>
+
